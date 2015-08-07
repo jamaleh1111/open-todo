@@ -53,4 +53,5 @@ end
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'active_model_serializers'
+gem 'figaro', '1.0'
 
