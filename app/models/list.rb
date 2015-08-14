@@ -3,5 +3,12 @@ class List < ActiveRecord::Base
   has_many :items
 
   validates :title, presence: true
-  # validates :permissions, 
+  validate :permissions_valid, on: :update
+
+  def permissions_valid
+    unless permissions == "Private"
+      errors.add(:permissions, "Wrong permissions")
+    end
+  end 
+
 end
